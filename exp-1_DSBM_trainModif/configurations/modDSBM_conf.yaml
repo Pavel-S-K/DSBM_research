@@ -6,16 +6,16 @@ defaults:
 
 # Павраметры модели
 seed: 44
-sigma: 0.3
+sigma: 1
 num_steps: 10
 net_name: mlp_large
 activation_fn: torch.nn.SiLU
 model_name: dsbm
 first_coupling: ref
 inner_iters: 10
-outer_iters: 2000
+outer_iters: 3000
 fb_sequence: ['b','f']
-lr: 1e-4
+lr: 1e-5
 batch_size: 64
 
 # Параметры распределений
@@ -23,11 +23,11 @@ Gaussian_distribution:
 
   dataset_size: 1000
   test_dataset_size: 1000
-  mean_1: 0.5
-  var_1: 0.01
+  mean_1: 0.1
+  var_1: 1
   
-  mean_2: -0.5
-  var_2: 0.01
+  mean_2: -0.1
+  var_2: 1
 
   dim: 5
 

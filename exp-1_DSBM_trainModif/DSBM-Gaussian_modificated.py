@@ -195,7 +195,7 @@ def train_dsbm(dsbm_ipf, x_pairs, batch_size, inner_iters, prev_model=None, fb='
   dl = iter(DataLoader(TensorDataset(*dsbm_ipf.generate_new_dataset(x_pairs, prev_model=prev_model, fb=fb, first_it=first_it)), 
                        batch_size=batch_size, shuffle=True, pin_memory=False, drop_last=True))
 
-  #for i in tqdm(range(inner_iters)):
+  
   for i in (range(inner_iters)):
     try:
       z0, z1 = next(dl)
@@ -228,8 +228,8 @@ def train_dsbm(dsbm_ipf, x_pairs, batch_size, inner_iters, prev_model=None, fb='
 def draw_plot(traj, z0, z1, N=None):
   
   plt.figure(figsize=(4,4))
-  plt.xlim(-1,1)
-  plt.ylim(-1,1)
+  plt.xlim(-4,4)
+  plt.ylim(-4,4)
     
   plt.scatter(z0[:, 0].cpu().numpy(), z0[:, 1].cpu().numpy(), label=r'$\pi_0$', alpha=0.15)
   plt.scatter(z1[:, 0].cpu().numpy(), z1[:, 1].cpu().numpy(), label=r'$\pi_1$', alpha=0.15)
@@ -372,7 +372,7 @@ def test(cfg):
         shutil.rmtree(save_directory)
     os.makedirs(save_directory, exist_ok=True)
     
-    optimal_result_dict = {'mean': x0_test.mean(0).mean(0).item(), 'var': x0_test.var(0).mean(0).item(), 'cov': 0}
+    optimal_result_dict = {'mean': x0_test.mean(0).mean(0).item(), 'var': x0_test.var(0).mean(0).item(), 'cov': (np.sqrt(5) - 1) / 2}
     result_list = {k: [] for k in optimal_result_dict.keys()}
 
     with tqdm(total=(len(model_list)), desc="Test loop") as pbar:
