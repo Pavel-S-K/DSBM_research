@@ -20,6 +20,7 @@ exp-2_NeuralODE/
 │   └── test_*.png            # Test metrics
 ├── notebooks/                # Jupyter notebooks
 │   └── NeuralODE_train.ipynb # Main training script
+├── src/                      # Scripts
 └── requirements.txt          # Python dependencies
 ```  
 
