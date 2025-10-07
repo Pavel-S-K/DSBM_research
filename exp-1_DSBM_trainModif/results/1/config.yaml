@@ -8,10 +8,10 @@ net_name: mlp_large
 activation_fn: torch.nn.SiLU
 model_name: dsbm
 first_coupling: ref
-inner_iters: 10000
-outer_iters: 15
+inner_iters: 100
+outer_iters: 150
 fb_sequence:
 - b
 - f
 paths:
-  experiments_dir_name: gaussian_
+  experiments_dir_name: gaussian_temp_2

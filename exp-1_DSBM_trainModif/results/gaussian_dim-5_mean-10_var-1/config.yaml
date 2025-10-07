@@ -1,6 +1,6 @@
 name: gaussian
 seed: 42
-a: 0.1
+a: 10
 dim: 5
 sigma: 1
 num_steps: 20
