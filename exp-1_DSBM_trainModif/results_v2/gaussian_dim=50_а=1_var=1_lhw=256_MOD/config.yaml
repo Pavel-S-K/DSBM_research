@@ -1,0 +1,18 @@
+name: gaussian
+seed: 42
+dim: 50
+a: 1
+sigma: 1
+num_steps: 20
+net_name: mlp_large
+net_hidden_layer_width: 256
+activation_fn: torch.nn.SiLU
+model_name: dsbm
+first_coupling: ref
+inner_iters: 100
+outer_iters: 200
+fb_sequence:
+- b
+- f
+paths:
+  experiments_dir_name: gaussian_dim=50_а=1_var=1_lhw=256
