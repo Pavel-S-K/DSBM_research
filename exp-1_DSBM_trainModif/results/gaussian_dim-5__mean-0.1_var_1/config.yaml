@@ -14,4 +14,4 @@ fb_sequence:
 - b
 - f
 paths:
-  experiments_dir_name: gaussian_
+  experiments_dir_name: gaussian_dim-5__mean-0.1_var_1_fsfw
