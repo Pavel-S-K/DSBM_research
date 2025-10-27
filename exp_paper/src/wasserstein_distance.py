@@ -1,4 +1,5 @@
 import numpy as np
+import torch
 import ot
 
 
@@ -28,3 +29,29 @@ def empirical_wasserstein_distance(
     cost = cost * cost
     wasserstein_squared = ot.emd2(a, b, cost)
     return float(np.sqrt(max(wasserstein_squared, 0.0)))
+
+
+
+def gaussian_W2_distance(x0, x1, plot=False):
+    # Конвертация в numpy
+    samples1_np = x0
+    samples2_np = x1
+    
+    # Оценка параметров из данных
+    mean1_estimated = np.mean(samples1_np, axis=0)
+    mean2_estimated = np.mean(samples2_np, axis=0)
+    cov1_estimated = np.cov(samples1_np, rowvar=False)
+    cov2_estimated = np.cov(samples2_np, rowvar=False)
+    
+    # Аналитическое расстояние на основе оценённых параметров
+    analytical_distance = ot.gaussian.bures_wasserstein_distance(
+        mean1_estimated, mean2_estimated, cov1_estimated, cov2_estimated
+    )
+
+    if plot:
+        print(f"Оценённые средние:")
+        print(f"  Выборка 1: {mean1_estimated}")
+        print(f"  Выборка 2: {mean2_estimated}")
+        print(f"Аналитическое W2 расстояние: {analytical_distance}")
+
+    return analytical_distance

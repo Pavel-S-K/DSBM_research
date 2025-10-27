@@ -10,8 +10,8 @@ seed: 42
 
 # Model params
 sigma: 1 
-num_steps: 200
-net_hidden_layer_width: 64
+num_steps: 20
+net_hidden_layer_width: 256
 activation_fn: torch.nn.SiLU
 batch_size: 128
 
@@ -25,16 +25,16 @@ fb_sequence: ['b','f']
 dataset_size: 10000
 test_dataset_size: 10000
 
-dim: 5
+dim: 50
 
-x0_mean: [-1]
+x0_mean: [-10]
 x0_vars_diag: [1]
 x0_cov_pairs: []
 
 
-x1_mean: [1]
+x1_mean: [10]
 x1_vars_diag: [1]
 x1_cov_pairs: []
 
 paths:
-  experiments_dir_name: gaussian_dim=5_а=1_var=1_hlw=128_EXP
+  experiments_dir_name: gaussian_dim=20_а=0.1_var=1_NEW

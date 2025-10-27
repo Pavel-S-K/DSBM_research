@@ -222,7 +222,7 @@ def train (cfg, model, x_pairs, x_pairs_test, logs, outer_iters, lr, RESULT_DIR)
                 
               # test - только для модели b -> f
               # оцениваем на каждой 10 итерации
-              if (it%10 == 0) or (it==2):
+              if (it%1== 0) or (len(logs['time_list'])==2):
 
                   # Сохраняем последнюю версию модели
                   #torch.save(model_list['model'].state_dict(), RESULT_DIR + 'model_list.pt')

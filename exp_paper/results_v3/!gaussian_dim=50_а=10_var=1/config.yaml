@@ -2,8 +2,8 @@ dataset_name: gaussian
 model_name: DSBM
 seed: 42
 sigma: 1
-num_steps: 200
-net_hidden_layer_width: 128
+num_steps: 20
+net_hidden_layer_width: 256
 activation_fn: torch.nn.SiLU
 batch_size: 128
 first_coupling: ref
@@ -25,4 +25,4 @@ x1_vars_diag:
 - 1
 x1_cov_pairs: []
 paths:
-  experiments_dir_name: gaussian_dim=50_а=10_var=1_hlw=64_EXP
+  experiments_dir_name: gaussian_dim=20_а=0.1_var=1_NEW
